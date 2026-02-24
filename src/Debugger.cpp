@@ -18,7 +18,7 @@
 #include "Log.h"
 #include "osal_keys.h"
 #include <osal_files.h>
-#include "TxFilterExport.h"
+#include "GLideNHQ/TxFilterExport.h"
 #include "GLideNHQ/txWidestringHelper.h"
 #include "PluginAPI.h"
 #include "wst.h"
@@ -1417,7 +1417,7 @@ FILE* Debugger::_openRipFile()
 
 			try {
 				wsCurFilename = file.path().filename().wstring();
-			} catch (std::filesystem::__cxx11::filesystem_error e) {
+			} catch (std::filesystem::filesystem_error e) {
 				// HACK: skips unicode file/dir instead of crashing
 				continue;
 			}

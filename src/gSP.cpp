@@ -786,17 +786,13 @@ void gSPTransformVertex(u32 v, SPVertex * spVtx, float mtx[4][4])
 	float ripMatrix[4][4];
 	const unsigned int ripMode = config.sceneRipper.sceneRipMode;
 
-	switch(ripMode) {
-		case 0:
-			CopyMatrix(ripMatrix, gSP.matrix.modelView[gSP.matrix.modelViewi]);
-			break;
-		case 1 ... 32:
-			CopyMatrix(ripMatrix, gSP.matrix.modelView[ripMode - 1]);
-			break;
-		default:
-			// Perspective
-			CopyMatrix(ripMatrix, mtx);
-			break;
+	if (ripMode == 0) {
+		CopyMatrix(ripMatrix, gSP.matrix.modelView[gSP.matrix.modelViewi]);
+	} else if (ripMode >= 1 && ripMode <= 32) {
+		CopyMatrix(ripMatrix, gSP.matrix.modelView[ripMode - 1]);
+	} else {
+		// Perspective
+		CopyMatrix(ripMatrix, mtx);
 	}
 #endif
 	for (int i = 0; i < VNUM; ++i) {

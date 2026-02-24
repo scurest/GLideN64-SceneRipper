@@ -492,6 +492,15 @@ void Config_LoadCustomConfig()
 	ConfigExternalClose(fileHandle);
 }
 
+static
+u32 pow2_config(u32 dim)
+{
+	if (dim == 0)
+		return 0;
+
+	return (1 << dim);
+}
+
 void Config_LoadConfig()
 {
 	if (g_configVideoGeneral == nullptr || g_configVideoGliden64 == nullptr)

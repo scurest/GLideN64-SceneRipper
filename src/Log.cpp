@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <fstream>
 #include <ctime>
+#include <chrono>
 
 std::mutex g_logMutex;
 std::wofstream fileOutput;
