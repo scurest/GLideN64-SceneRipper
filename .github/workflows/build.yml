@@ -44,7 +44,7 @@ jobs:
           cp translations/release/*.qm build/linux-mupen64plus-qt/
       - name: Upload GLideN64 (x64 Mupen64Plus-CLI)
         if: ${{ matrix.image == 'GLideN64 (x64 Mupen64Plus-CLI)' }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Linux-Mupen64Plus-CLI-x64
           path: |
@@ -52,7 +52,7 @@ jobs:
             build/linux-mupen64plus-cli/GLideN64_sceneripper.custom.ini
       - name: Upload GLideN64 (x64 Mupen64Plus-Qt)
         if: ${{ matrix.image == 'GLideN64 (x64 Mupen64Plus-Qt)' }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Linux-Mupen64Plus-Qt-x64
           path: |
@@ -167,7 +167,7 @@ jobs:
           cp translations/release/*.qm build/windows-mupen64plus-qt/
         shell: msys2 {0}
       - name: Upload GLideN64 (x64 Project64-Qt)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ matrix.image == 'GLideN64 (x64 Project64-Qt)' }}
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Windows-Project64-Qt-x64
@@ -176,7 +176,7 @@ jobs:
             build\windows-project64-qt-x64\GLideN64_sceneripper.custom.ini
             build\windows-project64-qt-x64\*.qm
       - name: Upload GLideN64 (x86 Project64-Qt)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ matrix.image == 'GLideN64 (x86 Project64-Qt)' }}
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Windows-Project64-Qt-x86
@@ -185,7 +185,7 @@ jobs:
             build\windows-project64-qt\GLideN64_sceneripper.custom.ini
             build\windows-project64-qt\*.qm
       - name: Upload GLideN64 (x64 Project64-WTL)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ matrix.image == 'GLideN64 (x64 Project64-WTL)' }}
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Windows-Project64-WTL-x64
@@ -194,7 +194,7 @@ jobs:
             build\windows-project64-wtl-x64\GLideN64_sceneripper.custom.ini
             build\windows-project64-wtl-x64\translations\*.Lang
       - name: Upload GLideN64 (x86 Project64-WTL)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ matrix.image == 'GLideN64 (x86 Project64-WTL)' }}
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Windows-Project64-WTL-x86
@@ -203,7 +203,7 @@ jobs:
             build\windows-project64-wtl\GLideN64_sceneripper.custom.ini
             build\windows-project64-wtl\translations\*.Lang
       - name: Upload GLideN64 (x64 Mupen64Plus-CLI)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ matrix.image == 'GLideN64 (x64 Mupen64Plus-CLI)' }}
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Windows-Mupen64Plus-CLI-x64
@@ -211,7 +211,7 @@ jobs:
             build\windows-mupen64plus-cli-x64\*.dll
             build\windows-mupen64plus-cli-x64\GLideN64_sceneripper.custom.ini
       - name: Upload GLideN64 (x86 Mupen64Plus-CLI)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ matrix.image == 'GLideN64 (x86 Mupen64Plus-CLI)' }}
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Windows-Mupen64Plus-CLI-x86
@@ -219,7 +219,7 @@ jobs:
             build\windows-mupen64plus-cli\*.dll
             build\windows-mupen64plus-cli\GLideN64_sceneripper.custom.ini
       - name: Upload GLideN64 (x64 Mupen64Plus-Qt)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ matrix.image == 'GLideN64 (x64 Mupen64Plus-Qt)' }}
         with:
           name: GLideN64-${{ env.GIT_REVISION }}-Windows-Mupen64Plus-Qt-x64
